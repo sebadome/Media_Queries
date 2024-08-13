@@ -1,0 +1,209 @@
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Contenedor principal */
+.principal-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  grid-template-areas:
+    "nav"
+    "main"
+    "footer";
+}
+
+/* Estilos para el nav */
+nav {
+  grid-area: nav;
+  background-color: #00579c;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-brand img {
+  width: 40px;
+  margin-right: 1rem;
+}
+
+.nav-menu {
+  list-style: none;
+  display: none;
+}
+
+.nav-menu li {
+  margin-left: 1rem;
+}
+
+.nav-menu a {
+  color: white;
+}
+
+.nav-toggle {
+  display: block;
+  cursor: pointer;
+}
+
+/* Estilos para la sección de filtros */
+.filters {
+  background-color: #e2e2e2;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filters label {
+  margin-bottom: 0.5rem;
+}
+
+.filters select {
+  padding: 0.5rem;
+  width: 100vw;
+  max-width: 100%;
+}
+
+/* Estilos para la sección de productos */
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.product-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+}
+
+.product-item button {
+  background-color: #00579c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+/* Estilos para el footer */
+footer {
+  grid-area: footer;
+  background-color: #012f6b;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  margin: 0 0.5rem;
+}
+
+.footer-social img {
+  width: 24px;
+}
+
+/* Media queries */
+@media screen and (min-width: 576px) {
+  .principal-container {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "nav main"
+      "nav main"
+      "footer main";
+  }
+
+  nav {
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu li {
+    margin: 0.5rem 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .products {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  }
+}
+
+/* Estilos para la barra de paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.pagination a {
+  color: #00579c;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+}
+
+.pagination a.active {
+  background-color: #00579c;
+  color: white;
+  border: none;
+}
+
+.pagination a:hover {
+  background-color: #ddd;
+}
+/* Cambiar color del logo principal a blanco */
+.logo-brand {
+  filter: invert(100%);
+}
+
+/* Cambiar color de los íconos sociales a blanco */
+.social-icon {
+  filter: invert(100%);
+}
